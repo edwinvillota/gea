@@ -1,0 +1,45 @@
+@import '../styles/themes/default.scss';
+
+.home__footer {
+    display: flex;
+    justify-content: center;
+    background-color: $Dark;
+    height: 250px;
+    width: 100%;
+
+    .footer__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4em;
+        height: 250px;
+        min-width: 1100px;
+        max-width: 1100px;
+        padding: 1em;
+
+        .footer__column {
+            display: flex;
+            flex-direction: column;
+
+            .footer__title {
+                font-family: $Standar;
+                font-weight: lighter;
+                font-size: 1em;
+                color: $Accent;
+            }
+
+            .footer__list {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+                &--item {
+                    list-style: none;
+                    color: $Light_gray;
+                    font-family: $Standar;
+                    font-size: .8em;
+                    margin-bottom: .5em;
+                }
+            }
+        }
+    }
+}

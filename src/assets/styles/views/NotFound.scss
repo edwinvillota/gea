@@ -1,0 +1,30 @@
+@import '../themes/default.scss';
+@import '../views/Home.scss';
+
+.notfound__container {
+    display: grid;
+    grid-template-rows: calc(100vh - 320px);
+    background-color: white;
+
+    .message__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: $Dark_gray;
+
+        .message__title {
+            color: $Light_gray;
+            font-family: $Standar;
+            font-size: 4em;
+        }
+
+        .message__subtitle {
+            color: $Accent;
+            font-family: $Cursive;
+            font-size: 2em;
+            margin-top: -2em;
+        }
+    }
+}

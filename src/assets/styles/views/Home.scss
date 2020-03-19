@@ -1,0 +1,124 @@
+@import '../themes/default.scss';
+
+
+.home__container {
+    display: grid;
+    grid-template-rows: calc(100vh - 70px) 100vh ;
+    background-color: white;
+
+
+    .home__banner--section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .banner__background {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            background-image: url('../../static/banner__background.jpg');
+            background-size: cover;
+            filter: brightness(30%);
+        }
+
+        .banner__main--title {
+            color: $Light_gray;
+            z-index: 4;
+            font-size: 3em;
+            font-family: $Standar;
+        }
+
+        .banner__main--subtitle {
+            font-family: $Cursive;
+            font-weight: lighter;
+            color: $Accent;
+            z-index: 4;
+            font-size: 1.5em;
+            margin-top: -1em;
+        }
+    }
+
+    .home__services--section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        height: 100vh;
+        padding: 1em 1em;
+        font-size: 1.8em;
+        color: $Dark_gray;
+        font-family: $Standar;
+
+
+        .section__title {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .services__wrapper {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+
+            .service__wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 30%;
+                justify-content: center;
+
+                .service__img {
+                    position: relative;
+                    display: flex;
+                    height: 200px;
+                    width: 200px;
+                    background-color: $Accent;
+                    border-radius: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    border: 5px solid white;
+                    box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+                    transition: all .2s ease-in;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .service__info {
+                    overflow: hidden;
+
+                    .service__title {
+                        font-size: 1em;
+                        width: 100%;
+                        text-align: center;
+                        color: $Accent;
+                        font-family: $Standar;
+                    }
+
+                    .service__content {
+                        text-align: justify;
+                        font-size: .5em;
+                        font-family: $Standar;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .home__contact--section {
+        display: none;
+        background-color: $Dark_gray;
+    }
+
+}
