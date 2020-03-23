@@ -3,11 +3,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 // Layout Imports
 import LandingPage from '../layouts/LandingPage'
+import AppLayout from '../layouts/AppLayout'
 import NotLayout from '../layouts/NotLayout'
 
 // Views Imports
 import Home from '../views/Home'
 import Login from '../views/Login'
+import Dashboard from '../views/Dashboard'
 import NotFound from '../views/Not_Found'
 
 
@@ -34,6 +36,16 @@ const routes = [
             }
         ]
     },
+    {
+        layout: AppLayout,
+        subroutes: [
+            {
+                exact: true,
+                path: '/dashboard',
+                component: Dashboard
+            }
+        ]
+    }
 ]
 
 const App = () => (

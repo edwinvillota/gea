@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Assets
-import '../assets/components/Navbar.scss'
+import '../assets/styles/components/Navbar.scss'
 import WhiteLogo from '../assets/static/white_logo.png'
 
 const Navbar = () => {
