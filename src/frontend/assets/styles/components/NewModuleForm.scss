@@ -1,0 +1,14 @@
+@import '../themes/default.scss';
+
+.NewModule__form--form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: solid 1px $Light_gray;
+  padding: 2em;
+  font-family: $Standar;
+
+  label {
+    color: $Dark_gray;
+  }
+}

@@ -74,3 +74,6 @@ yarn-error.log
 
 # Build
 dist/
+
+src/server/public
+src/frontend/utils/config.js

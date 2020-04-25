@@ -1,0 +1,140 @@
+@import '../themes/default.scss';
+
+.module__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: dashed 1px $Dark_gray;
+    height: 50px;
+    padding: 0 20px 0 5px;
+    cursor: pointer;
+    transform-origin: left;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        border: none;
+        background-color: $Accent;
+        transform: scaleX(1.05);
+    }
+
+    &:hover .icon__wrapper [class$=__icon] {
+        color: $Dark_gray;
+    }
+
+    &:hover .module__name {
+        color: $Dark_gray;
+    }
+
+
+    .icon__wrapper {
+        .module__icon {
+            transition: color .2s ease-in;
+            color: $Light_gray;
+            font-size: 30px;
+        }
+
+        .expand__icon {
+            color: $Light_gray;
+        }
+    }
+
+    .module__name {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+        align-items: center;
+        height: 100%;
+        font-family: $Standar;
+        font-size: 13px;
+        font-weight: lighter;
+        color: $Light_gray;
+        transition: color .2s ease-in;
+    }
+}
+
+.module__subroutes--wrapper {
+
+    .main__module--route {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: dashed 1px $Dark_gray;
+        height: 50px;
+        padding: 0 20px 0 5px;
+        cursor: pointer;
+        transform-origin: left;
+        transition: all .2s ease-in-out;
+    
+        &:hover {
+            border: none;
+            background-color: $Accent;
+            transform: scaleX(1.05);
+        }
+    
+        &:hover .icon__wrapper [class$=__icon] {
+            color: $Dark_gray;
+        }
+    
+        &:hover .module__name {
+            color: $Dark_gray;
+        }
+
+        .expand__checkbox {
+            display: none;
+        }
+
+        .expand__label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+
+    .subroutes__module--wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        transform-origin: top;
+        transition: all .2s ease;
+    }
+
+    .subroutes__expanded {
+        height: auto;
+    }
+
+    .icon__wrapper {
+        .module__icon {
+            transition: color .2s ease-in;
+            color: $Light_gray;
+            font-size: 30px;
+        }
+
+        .expand__icon {
+            color: $Light_gray;
+        }
+    }
+
+    .module__name {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+        align-items: center;
+        height: 100%;
+        font-family: $Standar;
+        font-size: 13px;
+        font-weight: lighter;
+        color: $Light_gray;
+        transition: color .2s ease-in;
+    }
+}
+

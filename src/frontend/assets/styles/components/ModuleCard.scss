@@ -1,0 +1,133 @@
+@import '../themes/default.scss';
+@import '../mixins/linearGradient.scss';
+
+.module__card--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 300px;
+  max-width: 350px;
+  min-width: 350px;
+  background-color: $White;
+  border-radius: 5px;
+  box-shadow: 0 3px  5px rgba(0,0,0,0.3);
+  margin: 20px;
+
+  .card__header--wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 130px;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    @include linear-gradient(90deg, $Accent, lighten($Accent, 5%), lighten($Accent, 10%), lighten($Accent, 15%));
+
+    .card__header--icon {
+      color: $White;
+      font-size: 65px;
+      font-weight: lighter;
+    }
+
+    .card__header--title {
+      font-family: $Standar;
+      margin: 0;
+      color: $White;
+      text-shadow: 0 0 5px rgba(0,0,0,.3);
+      text-transform: uppercase;
+    }
+  }
+
+  .card__content--wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 20px 0 20px;
+
+    .card__content--title {
+      margin: 0;
+      font-family: $Standar;
+      font-size: 18px;
+      font-weight: lighter;
+      color: $Dark_gray;
+    }
+
+    .card__content--description {
+      font-family: $Standar;
+      font-size: 14px;
+      color: $Mid_gray;
+      margin: 0;
+      margin-top: 5px;
+    }
+  }
+
+  .card__actions--wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+    height: 55px;
+    padding: 0 20px;
+
+    .card__actions--button {
+      margin-right: 15px;
+      font-size: 25px;
+      &.delete {
+        color: $Error;
+      }      
+      &.edit {
+        color: $Mid_gray;
+      }
+      &.assign {
+        color: $Accent;
+      }
+    }
+
+    .actions__expand--button {
+      align-self: center;
+      margin-left: auto;
+      height: 20px;
+      width: 20px;
+      font-size: 16px;
+    }
+  }
+
+  .card__submodules--wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform-origin: top;
+    padding: 0 20px;
+
+    .card__submodules--title {
+      margin: 10px 0; 
+      font-family: $Standar;
+      font-size: 18px;
+      font-weight: lighter;
+      color: $Dark_gray;
+    }
+
+    .card__submodule--wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .card__submodule--name {
+        font-family: $Standar;
+        font-size: 14px;
+        font-weight: bold;
+        color: $Mid_gray;
+      }
+  
+      .card__submodule--route {
+        font-family: $Standar;
+        color: $Accent;
+        font-size: 12px;
+        font-weight: lighter;
+        margin-bottom: 5px;
+      }
+    }
+
+  }
+}

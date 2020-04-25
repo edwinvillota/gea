@@ -1,0 +1,5 @@
+.Modules__grid {
+  display: flex;
+  flex-direction: row;
+  background-color: salmon;
+}

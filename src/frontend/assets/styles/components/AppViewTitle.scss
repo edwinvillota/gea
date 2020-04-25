@@ -1,0 +1,16 @@
+@import '../themes/default.scss';
+
+.AppView__title {
+  font-family: $Standar;
+  color: $Accent;
+  margin: 1em 0 10px 0;
+  padding: 0;
+  border-bottom: solid 2px $Mid_gray;
+}
+
+.AppView__subtitle {
+  font-family: $Standar;
+  font-size: 15px;
+  color: $Dark_gray;
+  margin: 0 0 1em 0;
+}
