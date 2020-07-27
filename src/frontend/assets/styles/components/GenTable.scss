@@ -1,0 +1,132 @@
+@import '../themes/default.scss';
+
+.gentable__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .gentable__header {
+    display: flex;
+
+    .gentable__title {
+      margin-right: auto;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .header__actions {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      color: $Accent;
+
+      .action {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        &:active {
+          color: $Accent;
+        }
+
+        &:visited {
+          color: $Accent;
+        }
+
+        .action__icon {
+          margin-right: .5em;
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .gentable__search--wrapper {
+    display: flex;
+    border-top: solid 1px $Light-gray;
+    border-bottom: solid 1px $Light-gray;
+    padding: 1em 0;
+
+    .gentable__search--icon {
+      font-size: 30px;
+      margin-right: .5em;
+    }
+
+    .gentable__search--input {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      font-size: 18px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .gentable__filters--wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .gentable__button--filters {
+        font-size: 16px;
+        border-left: solid 1px $Light-gray;
+
+        svg {
+          font-size: 30px;
+          margin: 0 .5em;
+        }
+      }
+
+    }
+  }
+  
+  .gentable__table {
+    border-collapse: collapse;
+
+    .table__row {
+      align-items: center;
+      text-align: left;
+      height: 60px;
+      transition: background .2s ease-in;
+      
+      &:hover {
+        background-color: $Light-gray;
+      }
+
+      .table__th {
+        font-weight: 500;
+        border-bottom: solid 1px $Light-gray;
+      }
+
+      .table__td {
+        color: $Mid-gray;
+        border-bottom: solid 1px $Light-gray;
+      }
+
+      .table__row--button {
+        font-size: 25px;
+        transition: all .2s ease-in;
+
+        svg {
+          color: $Mid-gray;
+        }
+      }
+
+      .delete {
+        &:hover svg {
+          color: $Error;
+        }
+      }
+
+      .edit {
+        &:hover svg {
+          color: $Accent;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,31 @@
+@import '../themes/default.scss';
+
+.newUser__spinner {
+  color: $Accent;
+  margin-right: .5em;
+}
+
+.newUser__modal--body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .newUser__modal--text {
+    margin: 1em 0;
+  }
+
+  .newUser__modal--actions {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    .modal__action {
+      color: $Accent;
+      text-decoration: none;
+
+      &:visited {
+        color: $Accent;
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@ const render = (html, preloadedState) => {
         </head>
         <body>
             <div id='app'>${html}</div>
+            <div id='modal-root'></div>
             <script>
                 window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
             </script>

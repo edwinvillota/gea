@@ -1,0 +1,32 @@
+@import '../themes/default.scss';
+
+.modal__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparentize($color: $Light_gray, $amount: .2);
+  font-family: $Standar;
+
+  .modal__panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: $White;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0px 3px 7px transparentize($color: $Dark_gray, $amount: .7);
+
+    .modal__button--close {
+      margin-left: auto;
+      svg {
+        font-size: 25px;
+      }
+    }
+  }
+}

@@ -63,12 +63,8 @@ const NewModuleForm = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-
-});
-
 const mapDispatchToProps = {
   createModule,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewModuleForm);
+export default connect(null, mapDispatchToProps)(NewModuleForm);

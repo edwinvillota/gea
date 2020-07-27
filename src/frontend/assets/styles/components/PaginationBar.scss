@@ -1,0 +1,49 @@
+@import '../themes/default.scss';
+
+.pagination__wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  .number__wrapper {
+    display: flex;
+    align-items: center;
+
+    .number__button {
+      transition: all .2s ease;
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+
+      &:hover {
+        background-color: $Light_gray !important;
+        margin: 2px;
+      }
+
+      &.active {
+        border: solid 1px $Accent;
+      }
+
+      &:disabled {
+        display: none;
+      }
+
+    }
+  }
+
+  .goto__wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .goto__text {
+      
+    }
+
+    .goto__input {
+      width: 50px;
+      margin: 0 1em;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import '../themes/default.scss';
+
+.userlist__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .userlist__header--wrapper {
+    display: flex;
+
+    .userlist__title {
+      margin-right: auto;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .userlist__link--create {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $Accent;
+      &:active {
+        color: $Accent;
+      }
+
+      .userlist__link--icon {
+        font-size: 20px;
+        color: $Accent;
+      }
+
+    }
+  }
+
+  .userlist__search--wrapper {
+    display: flex;
+    border-top: solid 1px $Light-gray;
+    border-bottom: solid 1px $Light-gray;
+    padding: 1em 0;
+
+    .userlist__search--icon {
+      font-size: 30px;
+      margin-right: .5em;
+    }
+
+    .userlist__search--input {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      font-size: 18px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .search__filters--wrapper {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      border-left: solid 1px $Light-gray;
+
+      .filter__icon {
+        font-size: 30px;
+        margin: 0 .5em;
+      }
+    }
+  }
+
+  .list__container {
+    display: flex;
+    flex-direction: column;
+
+    .list__header {
+      display: grid;
+      padding: 1em 0;
+      grid-template-columns: repeat(7, 1fr);
+      font-weight: 500;
+      color: $Dark;
+      border-bottom: solid 1px $Light-gray;
+      overflow: hidden;
+      column-gap: .5em;
+    }
+  }
+}
+  

@@ -1,0 +1,32 @@
+
+@import '../themes/default.scss';
+
+.list__row {
+  display: grid;
+  padding: 1em 0;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-bottom: solid 1px $Light-gray;
+  color: $Mid_gray;
+  border-bottom: solid 1px $Light-gray;
+  column-gap: .5em;
+
+  &:hover {
+    border-color: $Accent;
+  }
+
+  span {
+    word-wrap: break-word;
+    text-overflow: clip;
+  }
+
+  .actions__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .actions__icon {
+      font-size: 25px;
+      margin-left: 1em;
+    }
+  }
+}
