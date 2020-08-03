@@ -1,0 +1,43 @@
+@import '../themes/default.scss';
+
+.searchtablebar__container {
+  display: flex;
+  border-top: solid 1px $Light-gray;
+  border-bottom: solid 1px $Light-gray;
+  width: 100%;
+  height: 75px;
+
+  .searchtablebar__icon {
+    font-size: 30px;
+    margin-right: .5em;
+    border-left: solid 1px $Light-gray;
+    padding-left: .5em;
+    width: calc(30px + .5em);
+  }
+
+  .searchtablebar__input {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .filters__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .filters__button {
+      font-size: 16px;
+      border-left: solid 1px $Light-gray;
+
+      svg {
+        font-size: 30px;
+        margin: 0 .5em;
+      }
+    }
+  }
+}

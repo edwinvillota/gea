@@ -9,6 +9,7 @@ import Button from './Button';
 
 const PaginationBar = ({ page, handleChangePage, total, limit }) => {
   const [buttons, setButtons] = useState([]);
+  const [gotoPage, setGotoPage] = useState(1);
 
   useEffect(() => {
     const quantity = Math.ceil(total / limit);
@@ -18,6 +19,18 @@ const PaginationBar = ({ page, handleChangePage, total, limit }) => {
     }
     setButtons(numbers);
   }, [total, limit, page]);
+
+  const handleChangeGoToPage = (e) => {
+    const { value } = e.target;
+
+    if (value < 1) {
+      setGotoPage(1);
+    } else if (value > buttons.length) {
+      setGotoPage(buttons.length);
+    } else {
+      setGotoPage(value);
+    }
+  };
 
   return (
     <div className='pagination__wrapper'>
@@ -39,9 +52,16 @@ const PaginationBar = ({ page, handleChangePage, total, limit }) => {
       <Button icon='AiOutlineDoubleRight' onClick={() => handleChangePage(buttons.length)} disabled={(parseInt(page, 10) === buttons.length)} />
       <div className='goto__wrapper'>
         <span className='goto__text'>Página</span>
-        <input type='number' className='goto__input' />
+        <input
+          type='number'
+          className='goto__input'
+          min={1}
+          max={buttons.length}
+          value={gotoPage}
+          onChange={handleChangeGoToPage}
+        />
         <span className='goto__text'>Ir</span>
-        <Button icon='AiOutlineRight' />
+        <Button icon='AiOutlineRight' onClick={() => handleChangePage(gotoPage)} />
       </div>
     </div>
   );

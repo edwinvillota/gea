@@ -1,0 +1,11 @@
+@import '../themes/default.scss';
+
+.searchselect__select {
+  outline: none;
+  border: none;
+  min-width: 100px;
+  padding: .5em;
+  color: $Mid-gray;
+  background-color: $White;
+  margin-right: .5em;
+}

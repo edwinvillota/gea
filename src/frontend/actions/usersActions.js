@@ -59,6 +59,32 @@ export const getAllUsers = (page = 1) => {
   };
 };
 
+export const getSearchUsers = (params = [], page = 1) => {
+  return (dispatch) => {
+    const config = {
+      url: `${API_URL}/api/management/users/search`,
+      method: 'post',
+      data: {
+        params,
+        page,
+      },
+    };
+
+    axios(config)
+      .then(({ data }) => {
+        const cleanData = data.data.map((user) => {
+          user.createdAt = moment(user.createdAt).format('DD-MM-YY hh:mm A');
+          user.rol = user.rol.name;
+          return user;
+        });
+        dispatch(getAllUsersRequest(cleanData, data.page, data.total));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+
 // Create user
 
 export const createUserRequest = (createdUser) => {

@@ -2,22 +2,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Theme
-import { theme } from '../utils/config';
-
 // Assets
 import '../assets/styles/components/GenTable.scss';
 
 // Components
 import Icon from './Icon';
-import Button from './Button';
 
 // Hooks
 import useTableSearch from '../hooks/useTableSearch';
 
 const GenTable = ({ title, headers, data, actions, ignore = [] }) => {
 
-  const [filteredData, search, setSearch] = useTableSearch(data, 'username');
+  const [filteredData, search] = useTableSearch(data, 'username');
   const rows = search ? filteredData : data;
 
   return (
@@ -37,13 +33,6 @@ const GenTable = ({ title, headers, data, actions, ignore = [] }) => {
               ))) :
               (null)
           }
-        </div>
-      </div>
-      <div className='gentable__search--wrapper'>
-        <Icon name='AiOutlineSearch' className='gentable__search--icon' />
-        <input type='text' className='gentable__search--input' placeholder='Buscar...' onChange={(e) => setSearch(e.target.value)} value={search} />
-        <div className='gentable__filters--wrapper'>
-          <Button text='Filtros' icon='AiOutlineFilter' foreground={theme.colors.$Dark} background='transparent' className='gentable__button--filters' />
         </div>
       </div>
       <table className='gentable__table'>
