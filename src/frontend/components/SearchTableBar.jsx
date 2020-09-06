@@ -8,11 +8,11 @@ import Icon from './Icon';
 import Button from './Button';
 import SearchSelect from './SearchSelect';
 
-const SearchTableBar = ({ options, keyword, handleChangeKeyword }) => {
+const SearchTableBar = ({ options, keyword, searchProp, handleChangeKeyword, handleChangeProp }) => {
 
   return (
     <div className='searchtablebar__container'>
-      <SearchSelect options={options} />
+      <SearchSelect options={options} searchProp={searchProp} handleChange={handleChangeProp} />
       <Icon name='AiOutlineSearch' className='searchtablebar__icon' />
       <input type='text' className='searchtablebar__input' placeholder='Buscar ...' value={keyword} onChange={(e) => handleChangeKeyword(e.target.value)} />
       <div className='filters__wrapper'>

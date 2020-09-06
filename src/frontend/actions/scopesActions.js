@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import axios from 'axios';
 import moment from 'moment';
 import { API_URL } from '../utils/config';
@@ -35,5 +36,32 @@ export const getAllScopes = (page = 1) => {
       .catch((err) => {
         console.log(err);
       });
+  };
+};
+
+export const getSearchScopes = (params = [], page = 1) => {
+  return (dispatch) => {
+    const config = {
+      url: `${API_URL}/api/management/scopes/search`,
+      method: 'post',
+      data: {
+        params,
+        page,
+      },
+    };
+
+    axios(config)
+      .then(({ data }) => {
+        const cleanData = data.data.map(((scope) => {
+          scope.createdAt = moment(scope.createdAt).format('DD-MM-YY hh:mm A');
+          return scope;
+        }));
+
+        dispatch(getAllScopesRequest(cleanData, data.page, data.total));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
   };
 };

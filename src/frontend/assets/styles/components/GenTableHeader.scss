@@ -1,0 +1,40 @@
+@import '../themes/default.scss';
+
+.gtheader__container {
+  display: flex;
+  width: 100%;
+
+  .gtheader__title {
+    margin-right: auto;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .header__actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    color: $Accent;
+
+    .action {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      &:active {
+        color: $Accent;
+      }
+
+      &:visited {
+        color: $Accent;
+      }
+
+      .action__icon {
+        margin-right: .5em;
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

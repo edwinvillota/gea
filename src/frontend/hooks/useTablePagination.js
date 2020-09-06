@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 
-function useTablePagination(data, initPage = 1, limit = 10, normalAction, searchAction) {
+function useTablePagination(data, initPage = 1, limit = 10, defaultProp, normalAction, searchAction) {
   const [lim] = useState(limit);
   const [page, setPage] = useState(initPage);
   const { list, page: requestPage, total } = data;
   const [keyword, setKeyword] = useState('');
+  const [searchProp, setSearchProp] = useState(defaultProp);
 
   useEffect(() => {
     normalAction();
@@ -15,20 +16,21 @@ function useTablePagination(data, initPage = 1, limit = 10, normalAction, search
       if (!keyword) {
         normalAction(page);
       } else {
-        searchAction([{ propname: 'username', value: keyword }], page);
+        searchAction([{ propname: searchProp || '', value: keyword }], page);
       }
     }
-  }, [page, keyword]);
+  }, [page, keyword, searchProp]);
 
   useEffect(() => {
+    setPage(1);
     if (keyword) {
-      searchAction([{ propname: 'username', value: keyword }], page);
+      searchAction([{ propname: searchProp || '', value: keyword }], page);
     } else {
       normalAction(page);
     }
-  }, [keyword]);
+  }, [keyword, searchProp]);
 
-  return { lim, list, total, requestPage, keyword, setPage, setKeyword };
+  return { lim, list, total, requestPage, keyword, searchProp, setPage, setKeyword, setSearchProp };
 
 }
 

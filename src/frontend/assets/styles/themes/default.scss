@@ -1,7 +1,7 @@
 @charset "utf8";
 
 // Colors
-$Accent: #27ae60;
+$Accent: #53B0AE;
 $Dark: #222831;
 $Dark_gray: #393e46;
 $Mid_gray: #717171;
@@ -10,11 +10,11 @@ $White: #ffffff;
 $Error: #ff7d7d;
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
-$Cursive: 'Kaushan Script', cursive;
-$Standar: 'Oxanium', cursive;
+$Cursive: 'Quicksand', sans-serif;
+$Standar: 'Raleway', sans-serif;
 
 // Breakpoints
 $bp_xs: 600px;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Assets
 import '../assets/styles/components/Navbar.scss';
-import WhiteLogo from '../assets/static/white_logo.png';
+import WhiteLogo from '../assets/static/DarkHorizontal.svg';
 
 const Navbar = () => {
   return (

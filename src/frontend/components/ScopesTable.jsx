@@ -1,42 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-// Assets
-
 // Components
 import GenTable from './GenTable';
 import PaginationBar from './PaginationBar';
 import SearchTableBar from './SearchTableBar';
 import GenTableHeader from './GenTableHeader';
 
-// Hook
+// Hooks
 import useTablePagination from '../hooks/useTablePagination';
 
 // Actions
-import { getAllUsers, getSearchUsers } from '../actions/usersActions';
+import { getAllScopes, getSearchScopes } from '../actions/scopesActions';
 
 const searchOptions = [
-  { name: 'Usuario', value: 'username' },
   { name: 'Nombre', value: 'name' },
-  { name: 'Apellido', value: 'lastname' },
-  { name: 'Email', value: 'email' },
+  { name: 'Tipo', value: 'type' },
+  { name: 'Recurso', value: 'resource' },
 ];
 
-const UsersTable = ({ getAllUsers, getSearchUsers, users }) => {
-  const { lim, list, total, requestPage, keyword, searchProp, setPage, setKeyword, setSearchProp } = useTablePagination(users, 1, 10, 'username', getAllUsers, getSearchUsers);
+const ScopesTable = ({ getAllScopes, getSearchScopes, scopes }) => {
+  const { lim, list, total, requestPage, keyword, searchProp, setPage, setKeyword, setSearchProp } = useTablePagination(scopes, 1, 10, 'name', getAllScopes, getSearchScopes);
 
   return (
     <>
       <GenTableHeader
-        title='Usuario Activos'
+        title='Scopes Activos'
         actions={[
-          { name: 'Crear Usuario', icon: 'AiOutlinePlus', route: '/app/management/users/create' },
+          { name: 'Crear Scope', icon: 'AiOutlinePlus', route: '/app/management/scopes/create' },
         ]}
       />
       <SearchTableBar options={searchOptions} keyword={keyword} searchProp={searchProp} handleChangeKeyword={setKeyword} handleChangeProp={setSearchProp} />
       <GenTable
-        headers={['Usuario', 'Nombres', 'Apellidos', 'Email', 'Fecha de Creación', 'Rol', '', '']}
-        ignore={['user_id']}
+        headers={['Id', 'Nombre', 'Tipo', 'Recurso', 'Fecha de Creación', '', '']}
+        ignore={[]}
         data={list}
       />
       <PaginationBar page={requestPage} handleChangePage={setPage} total={total} limit={lim} />
@@ -45,12 +42,12 @@ const UsersTable = ({ getAllUsers, getSearchUsers, users }) => {
 };
 
 const mapStateToProps = (state) => ({
-  users: state.users,
+  scopes: state.scopes,
 });
 
 const mapDispatchToProps = {
-  getAllUsers,
-  getSearchUsers,
+  getAllScopes,
+  getSearchScopes,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersTable);
+export default connect(mapStateToProps, mapDispatchToProps)(ScopesTable);
