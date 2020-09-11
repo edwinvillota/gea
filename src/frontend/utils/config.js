@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-export const API_URL = 'http://localhost:4000';
+export const API_URL = 'http://167.99.3.121:4000';
 
 export const theme = {
   colors: {
