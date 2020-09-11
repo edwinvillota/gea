@@ -32,12 +32,8 @@ if (ENV === 'development') {
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(webpackConfig);
   const serverConfig = {
-    contentBase: `http://localhost:${PORT}`,
     port: PORT,
-    publicPath: webpackConfig.output.publicPath,
     hot: true,
-    historyApiFallback: true,
-    stats: { colors: true },
   };
 
   app.use(webpackDevMiddleware(compiler, serverConfig));
@@ -67,8 +63,6 @@ app.post('/auth/sign-in', async (req, res, next) => {
         const { token, ...user } = data;
 
         res.cookie('token', token, {
-          httpOnly: !(ENV === 'development'),
-          secure: !(ENV === 'development'),
         });
 
         res.status(200).json(user);

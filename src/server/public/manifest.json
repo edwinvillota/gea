@@ -1,14 +1,11 @@
 {
-  "main.css": "/assets/app-0366c00bac3aa3ecd204.css",
-  "main.js": "/assets/app-0366c00bac3aa3ecd204.js",
-  "main.css.map": "/assets/app-0366c00bac3aa3ecd204.css.map",
-  "main.js.map": "/assets/app-0366c00bac3aa3ecd204.js.map",
-  "vendors.js": "/assets/vendor-0366c00bac3aa3ecd204.js",
-  "vendors.js.map": "/assets/vendor-0366c00bac3aa3ecd204.js.map",
+  "main.css": "/assets/app-03a4e45e0350fbe21ae5.css",
+  "main.js": "/assets/app-03a4e45e0350fbe21ae5.js",
+  "vendors.js": "/assets/vendor-03a4e45e0350fbe21ae5.js",
   "assets/6254b3ede43543ac73198796532233b1.svg": "/assets/6254b3ede43543ac73198796532233b1.svg",
-  "assets/app-0366c00bac3aa3ecd204.css.gz": "/assets/app-0366c00bac3aa3ecd204.css.gz",
-  "assets/app-0366c00bac3aa3ecd204.js.gz": "/assets/app-0366c00bac3aa3ecd204.js.gz",
+  "assets/app-03a4e45e0350fbe21ae5.css.gz": "/assets/app-03a4e45e0350fbe21ae5.css.gz",
+  "assets/app-03a4e45e0350fbe21ae5.js.gz": "/assets/app-03a4e45e0350fbe21ae5.js.gz",
   "assets/NotFound.scss": "/assets/b7c3fdd42454cf515ec26a1294b537e7.jpg",
-  "assets/vendor-0366c00bac3aa3ecd204.js.LICENSE.txt": "/assets/vendor-0366c00bac3aa3ecd204.js.LICENSE.txt",
-  "assets/vendor-0366c00bac3aa3ecd204.js.gz": "/assets/vendor-0366c00bac3aa3ecd204.js.gz"
+  "assets/vendor-03a4e45e0350fbe21ae5.js.LICENSE.txt": "/assets/vendor-03a4e45e0350fbe21ae5.js.LICENSE.txt",
+  "assets/vendor-03a4e45e0350fbe21ae5.js.gz": "/assets/vendor-03a4e45e0350fbe21ae5.js.gz"
 }
