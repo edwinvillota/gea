@@ -9,6 +9,7 @@ import Users from '../views/Users';
 import CreateUser from '../views/CreateUser';
 import Roles from '../views/Roles';
 import Scopes from '../views/Scopes';
+import CreateMTPoint from '../views/CreateMTPoint';
 import NotFound from '../views/Not_Found';
 
 // Redirects
@@ -66,6 +67,11 @@ const serverRoutes = (isLogged) => {
       exact: true,
       path: '/app/management/scopes',
       component: isLogged ? Scopes : RedirectToLogin,
+    },
+    {
+      exact: true,
+      path: '/app/mtinspections/createpoint',
+      component: isLogged ? CreateMTPoint : RedirectToLogin,
     },
     {
       name: 'NotFound',

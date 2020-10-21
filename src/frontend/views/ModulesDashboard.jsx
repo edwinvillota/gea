@@ -14,7 +14,7 @@ const ModulesDashboard = () => {
   return (
     <AppLayout>
       <div className='view__wrapper'>
-        <AppViewTitle title='Modulos' subtitle='Administración de módulos.' />
+        <AppViewTitle title='Modulos' />
         <ModulesViewer />
       </div>
     </AppLayout>

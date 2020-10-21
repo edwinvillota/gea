@@ -15,7 +15,7 @@ const CreateModule = () => {
   return (
     <AppLayout>
       <div className='view__wrapper'>
-        <AppViewTitle title='Crear Módulos' subtitle='Crear Módulos Visuales' />
+        <AppViewTitle title='Crear Módulos' />
         <NewModuleForm />
       </div>
     </AppLayout>

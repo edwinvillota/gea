@@ -1,0 +1,12 @@
+@import '../themes/default.scss';
+
+.themedform {
+  &.createMTPointForm {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+
+    .comments, .themedform__submit {
+      grid-column: 1/5;
+    }
+  }
+}

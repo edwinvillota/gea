@@ -9,26 +9,25 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 
 dotenv.config();
 
-const isDev = (process.env.NODE_ENV === 'development');
-const entry = ['./src/frontend/index.js'];
-
-if (isDev) entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true');
+const isProd = (process.env.NODE_ENV === 'production');
 
 module.exports = {
-  mode: isDev ? 'development' : 'production',
-  entry,
+  devtool: isProd ? 'hidden-source-map' : 'cheap-source-map',
+  entry: './src/frontend/index.js',
+  mode: process.env.NODE_ENV,
   output: {
-    path: isDev ? '/' : path.resolve(__dirname, 'src/server/public'),
-    filename: isDev ? 'assets/app.js' : 'assets/app-[hash].js',
+    path: isProd ?
+      path.join(process.cwd(), './src/server/public') : '/',
+    filename: isProd ? 'assets/app-[hash].js' : 'assets/app.js',
     publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   optimization: {
-    minimizer: isDev ? [] : [
+    minimizer: isProd ? [
       new TerserPlugin(),
-    ],
+    ] : [],
     splitChunks: {
       chunks: 'async',
       name: true,
@@ -38,7 +37,7 @@ module.exports = {
           chunks: 'all',
           reuseExistingChunk: true,
           priority: 1,
-          filename: isDev ? 'assets/vendor.js' : 'assets/vendor-[hash].js',
+          filename: isProd ? 'assets/vendor-[hash].js' : 'assets/vendor.js',
           enforce: true,
           test(module, chunks) {
             const name = module.nameForCondition && module.nameForCondition();
@@ -95,7 +94,7 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [
@@ -104,12 +103,12 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: isDev ? 'assets/app.css' : 'assets/app-[hash].css',
+      filename: isProd ? 'assets/app-[hash].css' : 'assets/app.css',
     }),
-    isDev ? () => {} : new CompressionWebpackPlugin({
+    isProd ? new CompressionWebpackPlugin({
       test: /\.js$|.css$/,
       filename: '[path].gz',
-    }),
-    isDev ? () => {} : new ManifestPlugin(),
+    }) : () => {},
+    isProd ? new ManifestPlugin() : () => {},
   ],
 };

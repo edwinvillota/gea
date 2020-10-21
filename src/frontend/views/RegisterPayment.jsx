@@ -14,7 +14,7 @@ const RegisterPayment = () => {
   return (
     <AppLayout>
       <div className='view__wrapper'>
-        <AppViewTitle title='Registrar Pago' subtitle='López de Micay' />
+        <AppViewTitle title='Registrar Pago' />
         <UserPayInput />
       </div>
     </AppLayout>

@@ -10,7 +10,7 @@ const FormError = ({ error }) => {
 
   return (
     <animated.div style={props}>
-      <span className='form__field--error'>
+      <span className='field__error'>
         {error}
       </span>
     </animated.div>

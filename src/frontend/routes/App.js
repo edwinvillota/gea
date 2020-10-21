@@ -13,6 +13,7 @@ import Users from '../views/Users';
 import Roles from '../views/Roles';
 import Scopes from '../views/Scopes';
 import CreateUser from '../views/CreateUser';
+import CreateMTPoint from '../views/CreateMTPoint';
 
 // Redirects
 import RedirectToLogin from '../components/RedirectToLogin';
@@ -66,6 +67,11 @@ const App = ({ isLogged }) => (
         exact
         path='/app/management/scopes'
         component={isLogged ? Scopes : RedirectToLogin}
+      />
+      <Route
+        exact
+        path='/app/mtinspections/createpoint'
+        component={isLogged ? CreateMTPoint : RedirectToLogin}
       />
       <Route component={NotFound} />
     </Switch>
