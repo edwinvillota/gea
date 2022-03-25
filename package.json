@@ -10,7 +10,9 @@
     "lint": "eslint src/frontend/ --ext .js --ext .jsx --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -50,7 +52,8 @@
     "redux-thunk": "^2.3.0",
     "webpack": "^4.42.1",
     "webpack-manifest-plugin": "^2.2.0",
-    "yup": "^0.28.3"
+    "yup": "^0.28.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -92,5 +95,6 @@
       "\\.(jpg|jpeg|png|gif)$": "<rootDir>/src/frontend/__mocks__/fileMock.js",
       "\\.(scss|css|sass)": "<rootDir>/src/frontend/__mocks__/styleMock.js"
     }
-  }
+  },
+  "snyk": true
 }
