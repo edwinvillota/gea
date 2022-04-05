@@ -31,7 +31,7 @@
     "history": "^4.10.1",
     "ignore-styles": "^5.0.1",
     "leaflet": "^1.7.1",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "passport": "^0.4.1",
     "passport-http": "^0.3.0",
     "postcss-loader": "^3.0.0",
